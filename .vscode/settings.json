@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.c": "c",
+    "stdio.h": "c",
+    "chrono": "c",
+    "unistd.h": "c",
+    "iostream": "cpp",
+    "vector": "c"
+  }
+}
