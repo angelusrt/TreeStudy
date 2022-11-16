@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-// #include <math.h>
 #include <time.h>
 
 #define VECTOR_LENGHT 100
-// const int VECTOR_LENGHT = 100;
 
+//Estrutura da questão 2.
 struct no{
   int data;
   struct no* left;
   struct no* right;
 };
 
+//Funções da questão 1.
 void addRandomNumbers(int *vector, int lenght){
   const int MIN_RANGE = 1;
   const int MAX_RANGE = lenght * 10;
@@ -90,6 +90,7 @@ void insertionSort(const int *const vector, int *vectorCopy, int lenght){
   }
 }
 
+//Funções da questão 2.
 void countTime(
   double *msecElapsed,
   const int *const vector, 
@@ -103,7 +104,6 @@ void countTime(
   *msecElapsed = 
     ((double)stopTime - (double)startTime)/((double)CLOCKS_PER_SEC) * 1000;
 }
-
 
 struct no *insert(struct no *node, int data){
   if(node == NULL){
@@ -146,6 +146,7 @@ void traverseInOrder(struct no *node){
 }
 
 int main(){
+  //Questão 1.
   int vector[VECTOR_LENGHT] = {0};
   
   addRandomNumbers(vector, VECTOR_LENGHT);
@@ -174,6 +175,7 @@ int main(){
   printVector(vectorCopy, VECTOR_LENGHT);
   printf("Tempo total: %fs\n\n", msecElapsed);
 
+  //Questão 2.
   struct no *node = NULL;
   for (int i = 0; i < VECTOR_LENGHT; i++)
     node = insert(node, vector[i]);
